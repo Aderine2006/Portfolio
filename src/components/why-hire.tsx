@@ -16,19 +16,19 @@ const differentiators = [
     },
     {
         title: "Continuous Innovation",
-        description: "Preparing for GATE CSE 2026 while building AI systems. I maintain a rigorous discipline (gym & learning) for peak performance.",
+        description: "Building AI systems. I maintain a rigorous discipline (gym & learning) for peak performance.",
         icon: <Zap className="w-6 h-6 text-primary" />
     },
     {
         title: "Research-Oriented",
-        description: "Published an IEEE-level research draft. I approach problems with academic rigor and engineering precision.",
+        description: "Published an IEEE-level research paper. I approach problems with academic rigor and engineering precision.",
         icon: <BookOpen className="w-6 h-6 text-primary" />
     }
 ];
 
 export function WhyHireMe() {
     return (
-        <section id="about" className="py-24 px-4 bg-gradient-to-b from-transparent to-primary/5">
+        <section id="about" className="py-24 px-4 bg-gradient-to-b from-transparent to-primary/5 scroll-mt-32">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Hire <span className="text-gradient">Me?</span></h2>

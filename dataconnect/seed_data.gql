@@ -1,0 +1,109 @@
+mutation CreateDemoData @transaction @auth(level: USER, insecureReason: "This is a seed data mutation and should only be run by authenticated users to populate initial data.") {
+  user_insertMany(data: [
+    {
+      id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      displayName: "Alice Smith",
+      email: "alice@example.com",
+      createdAt: "2023-01-01T10:00:00Z",
+      headline: "Software Engineer",
+      summary: "Experienced software engineer specializing in web development.",
+      photoUrl: "https://example.com/alice.jpg"
+    },
+    {
+      id: "b1cde2f0-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      displayName: "Bob Johnson",
+      email: "bob@example.com",
+      createdAt: "2023-01-02T11:00:00Z",
+      headline: "Product Manager",
+      summary: "Dynamic product manager with a focus on user-centric design.",
+      photoUrl: "https://example.com/bob.jpg"
+    }
+  ])
+  education_insertMany(data: [
+    {
+      id: "c2d3e4f5-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      institution: "University of Example",
+      degree: "Master of Science",
+      major: "Computer Science",
+      startDate: "2021-09-01",
+      endDate: "2023-05-30",
+      gpa: 3.8,
+      createdAt: "2023-01-03T12:00:00Z"
+    },
+    {
+      id: "d3e4f5a6-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+      userId: "b1cde2f0-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      institution: "Tech Institute",
+      degree: "Bachelor of Arts",
+      major: "Business Administration",
+      startDate: "2018-09-01",
+      endDate: "2022-05-30",
+      gpa: 3.5,
+      createdAt: "2023-01-04T13:00:00Z"
+    }
+  ])
+  experience_insertMany(data: [
+    {
+      id: "e4f5a6b7-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      company: "Innovate Solutions",
+      jobTitle: "Senior Developer",
+      startDate: "2023-06-15",
+      description: "Developed and maintained critical software applications.",
+      location: "San Francisco, CA",
+      createdAt: "2023-01-05T14:00:00Z"
+    },
+    {
+      id: "f5a6b7c8-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+      userId: "b1cde2f0-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      company: "Global Tech Inc.",
+      jobTitle: "Associate Product Manager",
+      startDate: "2022-06-01",
+      description: "Managed product roadmap and collaborated with engineering teams.",
+      location: "New York, NY",
+      createdAt: "2023-01-06T15:00:00Z"
+    }
+  ])
+  project_insertMany(data: [
+    {
+      id: "g6b7c8d9-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      title: "Portfolio Website",
+      description: "A personal website to showcase projects and skills.",
+      createdAt: "2023-01-07T16:00:00Z",
+      technologiesUsed: ["React", "Node.js", "Firebase"],
+      projectUrl: "https://alice-portfolio.com",
+      repositoryUrl: "https://github.com/alice/portfolio"
+    },
+    {
+      id: "h7c8d9e0-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      userId: "b1cde2f0-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      title: "E-commerce Backend",
+      description: "Developed a scalable backend for an e-commerce platform.",
+      createdAt: "2023-01-08T17:00:00Z",
+      technologiesUsed: ["Python", "Django", "PostgreSQL"],
+      repositoryUrl: "https://github.com/bob/ecommerce-backend"
+    }
+  ])
+  document_insertMany(data: [
+    {
+      id: "i8d9e0f1-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      fileName: "Alice_Resume.pdf",
+      fileUrl: "https://example.com/alice_resume.pdf",
+      documentType: "Resume",
+      createdAt: "2023-01-09T18:00:00Z",
+      description: "Current resume for job applications."
+    },
+    {
+      id: "j9e0f1a2-3b4c-5d6e-7f8a-9b0c1d2e3f4a",
+      userId: "b1cde2f0-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      fileName: "Bob_CoverLetter.docx",
+      fileUrl: "https://example.com/bob_coverletter.docx",
+      documentType: "Cover Letter",
+      createdAt: "2023-01-10T19:00:00Z",
+      description: "Cover letter for the product manager position."
+    }
+  ])
+}

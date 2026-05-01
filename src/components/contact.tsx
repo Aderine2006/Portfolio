@@ -5,7 +5,7 @@ import { Mail, Github, Linkedin, Youtube, ArrowUpRight } from "lucide-react";
 
 export function Contact() {
     return (
-        <footer id="contact" className="w-full py-24 px-4 relative overflow-hidden">
+        <footer id="contact" className="w-full py-24 px-4 relative overflow-hidden scroll-mt-32">
             <div className="max-w-4xl mx-auto text-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -22,15 +22,16 @@ export function Contact() {
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-20">
                         <a
-                            href="mailto:contact@aderine.dev"
-                            className="w-full md:w-auto px-10 py-5 bg-white text-black rounded-full font-bold flex items-center justify-center gap-3 hover:bg-white/90 transition-all hover:scale-105"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=perezaderine@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full md:w-auto px-10 py-5 bg-foreground text-background rounded-full font-bold flex items-center justify-center gap-3 hover:opacity-90 transition-all hover:scale-105"
                         >
-                            <Mail className="w-5 h-5" /> contact@aderine.dev
+                            <Mail className="w-5 h-5" /> perezaderine@gmail.com
                         </a>
                         <div className="flex items-center gap-4">
-                            <SocialIcon href="#" icon={<Github />} />
-                            <SocialIcon href="#" icon={<Linkedin />} />
-                            <SocialIcon href="#" icon={<Youtube />} />
+                            <SocialIcon href="https://github.com/Aderine2006" icon={<Github />} isExternal />
+                            <SocialIcon href="https://www.linkedin.com/in/aderine-perez" icon={<Linkedin />} isExternal />
                         </div>
                     </div>
 
@@ -50,10 +51,12 @@ export function Contact() {
     );
 }
 
-function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
+function SocialIcon({ href, icon, isExternal }: { href: string; icon: React.ReactNode; isExternal?: boolean }) {
     return (
         <a
             href={href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
             className="p-4 glass-card rounded-full hover:bg-white/10 transition-all hover:scale-110 flex items-center justify-center"
         >
             {icon}

@@ -1,0 +1,53 @@
+query GetMyProfile @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users as it fetches the current user's profile.") {
+  user(key: {id_expr: "auth.uid"}) {
+    id
+    displayName
+    email
+    photoUrl
+    headline
+    summary
+    contactEmail
+    phoneNumber
+    linkedInUrl
+    githubUrl
+    personalWebsite
+    createdAt
+  }
+}
+
+query GetMyProjects @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users as it fetches projects belonging to the current user.") {
+  projects(where: {userId: {eq_expr: "auth.uid"}}, orderBy: [{createdAt: DESC}]) {
+    id
+    title
+    description
+    projectUrl
+    repositoryUrl
+    imageUrl
+    technologiesUsed
+    createdAt
+  }
+}
+
+mutation CreateNewProject($title: String!, $description: String!, $projectUrl: String, $repositoryUrl: String, $imageUrl: String, $technologiesUsed: [String!]) @auth(level: USER) {
+  project_insert(data: {
+    userId_expr: "auth.uid",
+    title: $title,
+    description: $description,
+    projectUrl: $projectUrl,
+    repositoryUrl: $repositoryUrl,
+    imageUrl: $imageUrl,
+    technologiesUsed: $technologiesUsed,
+    createdAt_expr: "request.time"
+  }) {
+    id
+  }
+}
+
+mutation UpdateMyHeadline($newHeadline: String!) @auth(level: USER) {
+  user_update(
+    key: {id_expr: "auth.uid"},
+    data: {headline: $newHeadline}
+  ) {
+    id
+  }
+}

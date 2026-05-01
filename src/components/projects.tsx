@@ -51,7 +51,7 @@ const projects = [
 
 export function Projects() {
     return (
-        <section id="projects" className="w-full py-24 px-4 overflow-hidden">
+        <section id="projects" className="w-full py-24 px-4 overflow-hidden scroll-mt-32">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div className="max-w-xl">
@@ -96,7 +96,7 @@ export function Projects() {
                                     </div>
                                     <div className="flex flex-wrap gap-2">
                                         {project.tech.map((t) => (
-                                            <span key={t} className="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[10px] font-mono">
+                                            <span key={t} className="px-2 py-0.5 bg-foreground/5 border border-foreground/10 rounded text-[10px] font-mono">
                                                 {t}
                                             </span>
                                         ))}
@@ -120,7 +120,7 @@ export function Projects() {
 
 function CardAction({ icon }: { icon: React.ReactNode }) {
     return (
-        <div className="w-8 h-8 rounded-full bg-background/50 backdrop-blur-md border border-border flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all">
+        <div className="w-8 h-8 rounded-full bg-background/50 backdrop-blur-md border border-border flex items-center justify-center cursor-pointer hover:bg-primary hover:text-background transition-all">
             {icon}
         </div>
     );

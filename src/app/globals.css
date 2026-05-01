@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 :root {
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #1A1A1A;
+  --border: rgba(0, 0, 0, 0.1);
+  --primary: #4F46E5;
+  --secondary: #2563EB;
+  --accent: #7C3AED;
+}
+
+.dark {
   --background: #030014;
   --foreground: #F8FAFC;
   --card: rgba(255, 255, 255, 0.03);
@@ -33,14 +44,14 @@ body {
 /* Custom Utilities */
 @layer utilities {
   .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #F8FAFC 0%, #A78BFA 100%);
+    background: linear-gradient(135deg, #0F172A 0%, #6366F1 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,7 +61,7 @@ body {
     position: absolute;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(124, 58, 128, 0.15) 0%, rgba(3, 0, 20, 0) 70%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--primary) 15%, transparent) 0%, transparent 70%);
     z-index: -1;
   }
 }

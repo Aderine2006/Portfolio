@@ -5,20 +5,18 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const experiences = [
     {
-        role: "Frontend & Backend Intern",
-        company: "Clofy Technologies",
-        location: "Remote",
-        period: "2024",
-        description: "Developed and optimized full-stack components for core products, focusing on scalability and user experience.",
-        metrics: ["15% improvement in load times", "Built 5+ core features"]
-    },
-    {
-        role: "Applications Engineering Intern",
-        company: "Revenue Operations",
-        location: "Chennai, TN",
-        period: "2024",
-        description: "Streamlined internal workflows and automated revenue tracking systems using modern technical stacks.",
-        metrics: ["Automated 3 manual processes", "Optimized data flow by 20%"]
+        "role": "Software Engineer Intern",
+        "company": "SNS Square",
+        "location": "Coimbatore",
+        "period": "2026",
+        "description": "Worked on backend automation systems and API integrations, building scalable workflow pipelines using n8n. Developed custom nodes to integrate SaaS platforms like ServiceNow, ClickUp, Supabase, and Snowflake, enabling automated task execution, data synchronization, and real-time processing. Focused on designing API-driven systems, handling authentication (OAuth 2.0, API keys), and optimizing workflow performance.",
+        "metrics": [
+            "Developed 10+ custom automation nodes for ServiceNow, ClickUp, Supabase, and Snowflake",
+            "Automated end-to-end workflows reducing manual effort by 50%",
+            "Implemented secure authentication and API integrations across multiple platforms",
+            "Optimized workflow execution and debugging, improving reliability and performance",
+            "Built reusable automation components for scalable system design"
+        ]
     },
     {
         role: "R&D Intern",
@@ -32,7 +30,7 @@ const experiences = [
 
 export function Experience() {
     return (
-        <section id="experience" className="w-full py-24 px-4 bg-black/20 overflow-hidden">
+        <section id="experience" className="w-full py-24 px-4 bg-foreground/5 overflow-hidden scroll-mt-32">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4">Professional <span className="text-gradient">Experience</span></h2>

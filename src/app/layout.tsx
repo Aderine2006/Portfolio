@@ -24,17 +24,23 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/theme-provider";
+import { FirebaseInit } from "@/components/firebase-init";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${outfit.variable} ${inter.variable} font-inter antialiased selection:bg-primary/30`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <FirebaseInit />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
