@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "portfolio-5a7a6",
-    "aderine": "portfolio-aderineperez"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "portfolio-5a7a6"
+  }
 }
