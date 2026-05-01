@@ -3,8 +3,8 @@ import { Hero } from "@/components/hero";
 import { Experience } from "@/components/experience";
 import { Projects } from "@/components/projects";
 import { WhyHireMe } from "@/components/why-hire";
-import { CurrentlyBuilding } from "@/components/now-building";
-import { TechArchitecture } from "@/components/architecture";
+import { Skills } from "@/components/skills";
+import { Achievements } from "@/components/achievements";
 import { Contact } from "@/components/contact";
 
 export default function Home() {
@@ -13,10 +13,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhyHireMe />
-      <TechArchitecture />
+      <Skills />
+      <Achievements />
       <Experience />
       <Projects />
-      <CurrentlyBuilding />
       <Contact />
     </main>
   );

@@ -38,8 +38,7 @@ export function Contact() {
                     <div className="pt-12 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-foreground/40 font-medium">
                         <p>© 2024 Aderine Perez Victor Joans. All rights reserved.</p>
                         <div className="flex items-center gap-6">
-                            <a href="#" className="hover:text-primary flex items-center gap-1">Resume <ArrowUpRight className="w-3 h-3" /></a>
-                            <a href="#" className="hover:text-primary flex items-center gap-1">GATE Prep <ArrowUpRight className="w-3 h-3" /></a>
+                            <a href="/Aderine_CV.pdf" target="_blank" className="hover:text-primary flex items-center gap-1 transition-colors">Resume <ArrowUpRight className="w-3 h-3" /></a>
                         </div>
                     </div>
                 </motion.div>

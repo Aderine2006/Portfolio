@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Hero() {
@@ -25,6 +25,19 @@ export function Hero() {
                             className="w-full h-full object-cover scale-110"
                         />
                     </div>
+                    {/* Resume Download Button */}
+                    <motion.a
+                        href="/Aderine_CV.pdf"
+                        download
+                        whileHover={{ scale: 1.1, rotate: 10 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="absolute -top-4 -left-4 w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shadow-2xl shadow-primary/40 cursor-pointer z-30 group border-2 border-background"
+                    >
+                        <FileText className="w-6 h-6" />
+                        <span className="absolute left-16 bg-background border border-primary/20 px-3 py-1.5 rounded-xl text-[8px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0 whitespace-nowrap pointer-events-none shadow-xl text-primary">
+                            Download CV
+                        </span>
+                    </motion.a>
                 </div>
 
                 {/* Available Badge - Improved Positioning */}

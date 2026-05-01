@@ -5,47 +5,42 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
 const projects = [
     {
-        title: "RoomHunter",
-        category: "PropTech / Platform",
-        description: "A brokerage platform for students featuring unique trade-in discount logic and AI-driven room matching.",
-        impact: "Recieved IEEE-level research recognition for its innovative trade-in logic.",
-        tech: ["Next.js", "Node.js", "Prisma", "AI Chatbot"],
-        problem: "Students struggling with high brokerage fees and inefficient room hunting.",
-        approach: "Built a peer-to-peer system with trade-in discounts to eliminate middle-men.",
-        link: "#",
-        github: "#"
+        title: "Next-Gen Personal Tracker",
+        category: "Productivity / SaaS",
+        description: "MYMate - A modern, beautiful career tracking web application. Features a dashboard for progress, goals management, and skill development monitoring.",
+        impact: "Includes Daily Schedule, Budget Planner, and Content Creation analysis tools.",
+        tech: ["React 18", "TypeScript", "Tailwind CSS", "Firebase", "Lucide"],
+        github: "https://github.com/Aderine2006/My_Mate",
+        link: "https://github.com/Aderine2006/My_Mate",
+        image: "/Next-gen-personal-tracker.png"
     },
     {
-        title: "Realtime Disaster Aggregation",
-        category: "System Design / SIH",
-        description: "Highly scalable system for real-time aggregation of disaster data across multiple sources.",
-        impact: "Designed to handle 10k+ concurrent requests with minimal latency.",
-        tech: ["React", "Express", "API Integration", "GeoJSON"],
-        problem: "Fragmented data sources making disaster response slow and erratic.",
-        approach: "Aggregated live feeds into a centralized dashboard with predictive heat-mapping.",
-        link: "#",
-        github: "#"
+        title: "Smart Attendance System",
+        category: "AI / Facial Recognition",
+        description: "AI-powered system for automatic attendance tracking with fraud prevention and liveness detection using webcam feeds.",
+        impact: "Features real-time monitoring, blink detection for security, and detailed PDF/Excel reports.",
+        tech: ["Python", "OpenCV", "Face Recognition", "SQLite", "Flask"],
+        github: "https://github.com/Aderine2006/Smart_Attendance",
+        link: "https://github.com/Aderine2006/Smart_Attendance"
     },
     {
-        title: "One-Shot Video Explainer",
-        category: "Generative AI",
-        description: "AI-based tool that automatically generates educational explainer videos from text inputs.",
-        impact: "Reduced video production time from hours to seconds.",
-        tech: ["Python", "OpenAI", "MoviePy", "Next.js"],
-        problem: "Content creators spending excessive time on basic frame sequencing.",
-        approach: "Leveraged LLMs to script and sequence frames automatically using Generative AI.",
-        link: "#",
-        github: "#"
+        title: "AI Agent Fleet Maintenance",
+        category: "AI Agentic Workflow / n8n",
+        description: "Agentic automation system for real-time vehicle fleet health monitoring using LangChain and Gemini.",
+        impact: "Improved maintenance efficiency by 40% with automated proactive alerts.",
+        tech: ["n8n", "LangChain", "Gemini", "Google Sheets"],
+        github: "https://github.com/Aderine2006/AI_Agent_for_vehicleFleet",
+        link: "https://github.com/Aderine2006/AI_Agent_for_vehicleFleet",
+        image: "/fleet-maintenance-workflow.png"
     },
     {
-        title: "Last Hope",
-        category: "Social Impact / Hackathon",
-        description: "A community-driven lost and found platform built during a high-pressure hackathon.",
-        impact: "Built MVP in under 24 hours with full geolocation support.",
-        tech: ["Next.js", "Firebase", "Tailwind"],
-        problem: "Lack of a centralized, trusted platform for lost items in local communities.",
-        approach: "Community-verified reporting with real-time notifications.",
-        github: "#"
+        title: "Aderine Bank",
+        category: "Python / OOP",
+        description: "A secure mini-banking system built entirely with manual logic (No AI) using Object-Oriented Programming.",
+        impact: "Supports Signup, Deposit, Withdraw, and precise Transaction Tallying using pure OOP.",
+        tech: ["Python", "OOP", "Logic Design"],
+        github: "https://github.com/Aderine2006/Aderine_Bank",
+        link: "https://github.com/Aderine2006/Aderine_Bank"
     }
 ];
 
@@ -58,8 +53,8 @@ export function Projects() {
                         <h2 className="text-3xl md:text-5xl font-bold mb-4">Selected <span className="text-gradient">Projects</span></h2>
                         <p className="text-foreground/60 text-lg">Case studies of solving complex problems with high-performance engineering.</p>
                     </div>
-                    <a href="#" className="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
-                        See all projects <ArrowRight className="w-4 h-4" />
+                    <a href="https://github.com/Aderine2006" target="_blank" className="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                        View All on GitHub <ArrowRight className="w-4 h-4" />
                     </a>
                 </div>
 
@@ -71,32 +66,40 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="glass-card rounded-3xl overflow-hidden flex flex-col h-full"
+                            className="glass-card rounded-3xl overflow-hidden flex flex-col h-full group hover:border-primary/50 transition-all"
                         >
                             {/* Project Card Header/Visual */}
-                            <div className="h-48 bg-gradient-to-br from-primary/20 via-background to-secondary/20 p-8 flex items-center justify-center relative overflow-hidden">
-                                <div className="text-4xl font-black opacity-20 select-none tracking-widest uppercase">
-                                    {project.title.split(' ')[0]}
-                                </div>
+                            <div className="h-56 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative overflow-hidden flex items-center justify-center">
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover opacity-40 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                                    />
+                                ) : (
+                                    <div className="text-4xl font-black opacity-10 select-none tracking-tighter uppercase group-hover:scale-110 group-hover:opacity-20 transition-all">
+                                        {project.title.split(' ')[0]}
+                                    </div>
+                                )}
                                 <div className="absolute top-4 right-4 flex gap-2">
-                                    {project.github && <CardAction icon={<Github className="w-4 h-4" />} />}
-                                    {project.link && <CardAction icon={<ExternalLink className="w-4 h-4" />} />}
+                                    {project.github && <CardAction href={project.github} icon={<Github className="w-4 h-4" />} />}
+                                    {project.link && <CardAction href={project.link} icon={<ExternalLink className="w-4 h-4" />} />}
                                 </div>
                             </div>
 
                             <div className="p-8 flex-1 flex flex-col">
-                                <div className="text-xs font-bold text-primary uppercase tracking-widest mb-2">{project.category}</div>
-                                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                                <p className="text-foreground/60 text-sm mb-6 line-clamp-2">{project.description}</p>
+                                <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">{project.category}</div>
+                                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
+                                <p className="text-foreground/60 text-sm mb-6 line-clamp-2 leading-relaxed">{project.description}</p>
 
-                                <div className="space-y-4 mb-6 flex-1">
-                                    <div className="text-xs">
-                                        <span className="text-foreground/40 font-bold uppercase block mb-1">Impact</span>
-                                        <p className="text-foreground/80 italic">"{project.impact}"</p>
+                                <div className="space-y-4 mb-8 flex-1">
+                                    <div className="p-4 bg-foreground/[0.02] border border-foreground/5 rounded-2xl">
+                                        <span className="text-[10px] text-foreground/40 font-black uppercase block mb-1 tracking-widest">Impact</span>
+                                        <p className="text-foreground/80 text-xs italic">"{project.impact}"</p>
                                     </div>
                                     <div className="flex flex-wrap gap-2">
                                         {project.tech.map((t) => (
-                                            <span key={t} className="px-2 py-0.5 bg-foreground/5 border border-foreground/10 rounded text-[10px] font-mono">
+                                            <span key={t} className="px-3 py-1 bg-foreground/5 border border-foreground/5 rounded-lg text-[9px] font-bold text-foreground/40 group-hover:border-primary/20 group-hover:text-primary/80 transition-all">
                                                 {t}
                                             </span>
                                         ))}
@@ -104,10 +107,10 @@ export function Projects() {
                                 </div>
 
                                 {/* Case Study Snippet */}
-                                <div className="pt-6 border-t border-border mt-auto">
-                                    <button className="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-2">
-                                        View Case Study <ArrowRight className="w-3 h-3" />
-                                    </button>
+                                <div className="pt-6 border-t border-foreground/5 mt-auto">
+                                    <a href={project.github} target="_blank" className="text-[10px] font-black uppercase tracking-[0.3em] hover:text-primary transition-colors flex items-center gap-2 group/btn">
+                                        View Repository <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>
@@ -118,10 +121,14 @@ export function Projects() {
     );
 }
 
-function CardAction({ icon }: { icon: React.ReactNode }) {
+function CardAction({ icon, href }: { icon: React.ReactNode; href: string }) {
     return (
-        <div className="w-8 h-8 rounded-full bg-background/50 backdrop-blur-md border border-border flex items-center justify-center cursor-pointer hover:bg-primary hover:text-background transition-all">
+        <a
+            href={href}
+            target="_blank"
+            className="w-8 h-8 rounded-full bg-background/50 backdrop-blur-md border border-foreground/5 flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all shadow-xl shadow-black/5 z-20"
+        >
             {icon}
-        </div>
+        </a>
     );
 }
