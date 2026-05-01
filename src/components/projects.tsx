@@ -11,7 +11,7 @@ const projects = [
         impact: "Includes Daily Schedule, Budget Planner, and Content Creation analysis tools.",
         tech: ["React 18", "TypeScript", "Tailwind CSS", "Firebase", "Lucide"],
         github: "https://github.com/Aderine2006/My_Mate",
-        link: "https://github.com/Aderine2006/My_Mate",
+        link: "https://mymate-2487.web.app/",
         image: "/Next-gen-personal-tracker.png"
     },
     {
@@ -21,7 +21,6 @@ const projects = [
         impact: "Features real-time monitoring, blink detection for security, and detailed PDF/Excel reports.",
         tech: ["Python", "OpenCV", "Face Recognition", "SQLite", "Flask"],
         github: "https://github.com/Aderine2006/Smart_Attendance",
-        link: "https://github.com/Aderine2006/Smart_Attendance"
     },
     {
         title: "AI Agent Fleet Maintenance",
@@ -30,7 +29,6 @@ const projects = [
         impact: "Improved maintenance efficiency by 40% with automated proactive alerts.",
         tech: ["n8n", "LangChain", "Gemini", "Google Sheets"],
         github: "https://github.com/Aderine2006/AI_Agent_for_vehicleFleet",
-        link: "https://github.com/Aderine2006/AI_Agent_for_vehicleFleet",
         image: "/fleet-maintenance-workflow.png"
     },
     {
@@ -40,7 +38,6 @@ const projects = [
         impact: "Supports Signup, Deposit, Withdraw, and precise Transaction Tallying using pure OOP.",
         tech: ["Python", "OOP", "Logic Design"],
         github: "https://github.com/Aderine2006/Aderine_Bank",
-        link: "https://github.com/Aderine2006/Aderine_Bank"
     }
 ];
 
