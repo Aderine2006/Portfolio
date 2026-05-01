@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #1A1A1A;
-  --card: rgba(255, 255, 255, 0.9);
-  --card-foreground: #1A1A1A;
-  --border: rgba(0, 0, 0, 0.1);
-  --primary: #4F46E5;
-  --secondary: #2563EB;
-  --accent: #7C3AED;
+  --background: #fafafa;
+  --foreground: #050505;
+  --card: rgba(255, 255, 255, 0.7);
+  --card-foreground: #050505;
+  --border: rgba(0, 0, 0, 0.05);
+  --primary: #0066FF;
+  --secondary: #FF3B30;
+  --accent: #34C759;
 }
 
 .dark {
-  --background: #030014;
-  --foreground: #F8FAFC;
-  --card: rgba(255, 255, 255, 0.03);
-  --card-foreground: #F8FAFC;
-  --border: rgba(255, 255, 255, 0.1);
-  --primary: #7C3AED;
-  --secondary: #3B82F6;
-  --accent: #A78BFA;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: rgba(20, 20, 20, 0.4);
+  --card-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #00FF95;
+  --secondary: #00B2FF;
+  --accent: #FF2D55;
 }
 
 @theme inline {
@@ -36,45 +36,45 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-feature-settings: "rlig" 1, "calt" 1;
+  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.02em;
 }
 
 /* Custom Utilities */
 @layer utilities {
   .glass-card {
     background: var(--card);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid var(--border);
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.03);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    background: linear-gradient(to bottom right, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .grid-pattern {
-    background-size: 30px 30px;
+    background-size: 40px 40px;
     background-image: 
-      linear-gradient(to right, var(--border) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-    mask-image: radial-gradient(circle at center, black, transparent 80%);
+      radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+    mask-image: linear-gradient(to bottom, black 50%, transparent);
   }
 
   .hero-glow {
     position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, color-mix(in srgb, var(--primary) 15%, transparent) 0%, transparent 70%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, color-mix(in srgb, var(--primary) 10%, transparent) 0%, transparent 70%);
     z-index: -1;
   }
+}
 
-  @keyframes shimmer {
-    from { background-position: 0 0; }
-    to { background-position: 40px 40px; }
-  }
+::selection {
+  background: var(--primary);
+  color: black;
 }

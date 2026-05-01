@@ -34,14 +34,15 @@ const experiences = [
     },
     {
         role: "R&D Intern",
-        company: "EdTech Startup",
+        company: "Quillnetics (EdTech Startup)",
         location: "Remote",
-        period: "2025",
-        description: "Pioneered AI-driven educational framing strategies to optimize pedagogical content delivery.",
+        period: "Aug 2025 – Sept 2025",
+        description: "Led research on AI-driven course structuring to enhance content-market fit and optimize learning experience.",
         metrics: [
-            "Achieved 30% boost in course framing efficiency",
-            "Reduced research-to-deployment cycle by 14 days",
-            "Leveraged LLMs for automated pedagogy mapping"
+            "Improved course framing efficiency by 30% through data-driven content structuring",
+            "Reduced research-to-deployment cycle by 14 days by streamlining curriculum design workflows",
+            "Utilized LLMs to automate pedagogy mapping and identify high-demand learning paths",
+            "Analyzed market gaps and user segments to align course offerings with real-world demand"
         ],
         color: "var(--secondary)"
     }
