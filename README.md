@@ -84,4 +84,4 @@ firebase deploy
 *6th Sem CSE Student | Software Engineer | Product Enthusiast*
 
 ---
-© 2024 Aderine Perez. Built with precision and passion.
+© 2026 Aderine Perez. Built with precision and passion.
